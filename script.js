@@ -135,7 +135,7 @@ function getScore(cardArray) {
       hasAce = true;
     }
   }
-  if (hasAce && sscore + 10 <= 21) {
+  if (hasAce && score + 10 <= 21) {
     return score + 10;
   }
   return score;
@@ -147,7 +147,33 @@ function updateScores() {
 }
 
 function checkForEndOfGame() {
-  //TODO
+  updateScores();
+
+  if (gameOver) {
+    //   Let dealer take cards
+    while (
+      dealerScore < playerScore &&
+      playerScore <= 21 &&
+      dealerScore <= 21
+    ) {
+      dealerCards.push(getNextCard());
+      updateScores();
+    }
+  }
+
+  if (playerScore > 21) {
+    playerWon = false;
+    gameOver = true;
+  } else if (dealerScore > 21) {
+    playerWon = true;
+    gameOver = true;
+  } else if (gameOver) {
+    if (playerScore > dealerScore) {
+      playerWon = true;
+    } else {
+      playerWon = false;
+    }
+  }
 }
 
 function showStatus() {
