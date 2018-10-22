@@ -216,18 +216,4 @@ function showStatus() {
     hitButton.style.display = "none";
     stayButton.style.display = "none";
   }
-
-  //   for (var i = 0; i < deck.length; i++) {
-  //     textArea.innerText += "\n" + getCardString(deck[i]);
-  //   }
 }
-
-// let deck = createDeck();
-
-// let playerCards = [getNextCard(), getNextCard()];
-
-// console.log("Welcome to Blackjack!");
-
-// console.log("You are dealt: ");
-// console.log(" " + getCardString(playerCards[0]));
-// console.log(" " + getCardString(playerCards[1]));
